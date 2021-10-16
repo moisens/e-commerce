@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "company": "SNEAKER COMPANY",
+    "title": "Fall Limited Edition Sneakers",
+    "price": 250.00,
+    "images": {
+      "img1":{"id": 1, "image": "./images/image-name.jpg"},
+      "img2":{"id": 2, "image": "./images/image-name.jpg"},
+      "img3":{"id": 3, "image": "./images/image-name.jpg"},
+      "img4":{"id": 4, "image": "./images/image-name.jpg"}
+
+    }
+  },
+  {
+    "id": 2,
+    "company": "NIKE",
+    "title": "Fall Limited Edition Sneakers",
+    "price": 280.00,
+    "images": {
+      "img1":{"id": 1, "image": "./images/image-name.jpg"},
+      "img2":{"id": 2, "image": "./images/image-name.jpg"},
+      "img3":{"id": 3, "image": "./images/image-name.jpg"},
+      "img4":{"id": 4, "image": "./images/image-name.jpg"}
+
+    }
+  }
+]
