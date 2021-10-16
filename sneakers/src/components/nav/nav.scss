@@ -1,0 +1,93 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 140px 20px ;
+  background-color: hsl(0, 0%, 100%);
+
+
+  .logo-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    .nav-logo {
+      cursor: pointer;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+
+      li {
+        list-style-type: none;
+
+        a {
+          text-decoration: none;
+          color: hsl(220, 14%, 75%);
+
+          &:hover {
+            color: hsl(219, 9%, 45%);
+            border-bottom: solid 4px hsl(26, 100%, 55%);
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .nav-cart-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    
+    .nav-cart {
+      display: flex;
+      position: relative;
+      cursor: pointer;
+
+      .cart-number-art {
+        background-color: hsl(26, 100%, 55%);
+        color: hsl(0, 0%, 100%);
+        width: 18px;
+        height: 13px;
+        padding-top: 0.5px;
+        border-radius: 7px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -6px;
+        right: -4px;
+        //display: none;
+
+      }
+    }
+
+    .nav-avatar {
+      width: 50px;
+      height: 50px;
+
+      
+
+      img {
+        width: 100%;
+
+        &:hover {
+          border: solid 2px hsl(26, 100%, 55%);
+          border-radius: 25px;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+
+  
+}
