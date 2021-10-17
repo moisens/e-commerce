@@ -11,7 +11,6 @@ const Product = () => {
       <Imageproduct />
       <section className='product-description'>
         <Description />
-        
         <div className='increase-addto'>
           <div className='increase-nbr-prosuct'>
             <div className='fas'><img src={plus} alt="plus" /></div>
