@@ -3,7 +3,7 @@ const Button = ({ className='', type, text, ...otherProps }) => {
     <button
       className={className}
       type={type}
-      otherProps={otherProps}
+      {...otherProps}
     >
       {text}
     </button>

@@ -3,9 +3,10 @@ import effacer from '../../../public/images/effacer.svg'
 import Button from '../btnComponent/Button';
 
 
-const Cart = () => {
+const Cart = ({ isCartActive }) => {
+  
   return (
-    <div className='cart-container'>
+    <div className={isCartActive ? 'cart-container isActive' : 'cart-container'}>
       <header>
         <h2 className='cart-title'>Cart</h2>
         <hr className='cart-hr' />
