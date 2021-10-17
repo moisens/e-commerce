@@ -2,20 +2,12 @@ import './product.scss'
 import plus from '../../images/plus.svg'
 import minus from '../../images/minus.svg'
 import iconcart from '../../images/iconcart.svg'
-
+import Imageproduct from './Imageproduct'
 
 const Product = () => {
   return (
     <header className='product-detail'>
-      <section className='product-image'>
-        <div className='primary-image'>BIG IMG</div>
-        <div className='product-images-container'>
-          <div className='active-img'>IMG1</div>
-          <div>IMG2</div>
-          <div>IMG3</div>
-          <div>IMG4</div>
-        </div>
-      </section>
+      <Imageproduct />
       <section className='product-description'>
         <h5>SNEAKERS COMPANY</h5>
         <h2>Fall Limited Edition Sneakers</h2>
