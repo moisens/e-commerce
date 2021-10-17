@@ -37,6 +37,15 @@
         height: 80px;
         background-color: hsl(25, 100%, 94%);
         border-radius: 12px;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          object-fit: cover;
+          border-radius: 10px;
+        }
 
         &.active-img{
           border: solid 2px hsl(26, 100%, 55%);
@@ -50,7 +59,8 @@
 
     h5 {
       color: hsl(26, 100%, 55%);
-      margin-top: 50px 0 20px;
+      //-top: 50px 0 20px;
+      padding-bottom: 15px;
       letter-spacing: 2px;
     }
 
@@ -135,9 +145,11 @@
       font-weight: 700;
       border-radius: 12px;
       cursor: pointer;
+      transition: all ease-in .9s;
 
       &:hover {
         background-color: hsl(25, 100%, 94%);
+        transition: all ease-out .9s;
       }
       
 
