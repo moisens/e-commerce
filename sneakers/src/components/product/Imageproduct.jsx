@@ -1,7 +1,7 @@
 import useFetch from '../../hooks/useFetch'
 
 const Imageproduct = () => {
-  const { error, status, datas } = useFetch('../../../public/data.json');
+  const { error, status, datas } = useFetch('../../../public/data/data.json');
 
   if (status === 'pending') return <h2>Loading...</h2>;
   if (status === 'rejected') throw error;
@@ -16,7 +16,7 @@ const Imageproduct = () => {
               const { images } = item;
               return (
                 images.map(picture => (
-                  <div className='product-images-container' key={picture.id}>
+                  <div className=''  key={picture.id}>
                     <img className='' src={picture.image} alt={picture.name} title={picture.name}/>
                   </div>
                 ))

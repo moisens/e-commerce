@@ -74,17 +74,19 @@
     .nav-avatar {
       width: 50px;
       height: 50px;
+      transition: all ease-in 1s;
+
+      &:hover {
+        border: solid 2px hsl(26, 100%, 55%);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all ease-out 1s;
+      }
 
       
 
       img {
         width: 100%;
-
-        &:hover {
-          border: solid 2px hsl(26, 100%, 55%);
-          border-radius: 25px;
-          cursor: pointer;
-        }
       }
     }
 

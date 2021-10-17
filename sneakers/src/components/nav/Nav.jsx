@@ -1,9 +1,9 @@
 import './nav.scss';
 import { links } from '../../utils/utils';
 import { Link } from 'react-router-dom';
-import avatar from '../../images/avatar.png'
-import logo from '../../images/logo.svg'
-import iconcart from '../../images/iconcart.svg'
+import avatar from '../../../public/images/avatar.png'
+import logo from '../../../public/images/logo.svg'
+import iconcart from '../../../public/images/iconcart.svg'
 
 
 
@@ -18,9 +18,9 @@ const Nav = () => {
           {links.map(link => {
             const { id, text, url } = link;
             return (
-              <li key={id}>
-                <Link to={url}>{text}</Link>
-              </li>
+              <ul key={id}>
+                <li><Link to={url}>{text}</Link></li>
+              </ul>
             )
           })}
         </div>
