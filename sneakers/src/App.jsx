@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Route exact path='/product/:id'>
+      <Route>
         <Product />
       </Route>
     </Router>
