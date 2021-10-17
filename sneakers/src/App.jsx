@@ -7,11 +7,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 function App() {
-  
+
+  const [isCartActive, setIsCartActive] = useState(false);
+
+  const activeCart = () => {
+    setIsCartActive(!isCartActive);
+  }
+
 
   return (
     <Router>
-      <Nav />
+      <Nav activeCart={activeCart} isCartActive={isCartActive} />
       <Route>
         <Product />
       </Route>
