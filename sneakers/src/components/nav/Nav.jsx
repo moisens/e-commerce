@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import avatar from '../../../public/images/avatar.png'
 import logo from '../../../public/images/logo.svg'
 import iconcart from '../../../public/images/iconcart.svg'
+import Cart from '../cart/Cart'
 
 
 
@@ -28,12 +29,13 @@ const Nav = () => {
       <div className='nav-cart-avatar'>
         <div className='nav-cart'>
           <img src={iconcart} alt="icon-cart" />
-          <div className='cart-number-art'>0</div>
+          <div className='cart-number-art'>3</div>
         </div>
         <div className="nav-avatar">
           <img src={avatar} alt="avatar" />
         </div>
       </div>
+      <Cart />
     </nav>
   )
 }
