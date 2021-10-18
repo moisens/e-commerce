@@ -1,53 +1,78 @@
-import { useState } from 'react'
-import './App.scss'
-import Nav from './components/nav/Nav'
-import Product from './components/product/Product'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
-
+import { useState } from "react";
+import "./App.scss";
+import Nav from "./components/nav/Nav";
+import Product from "./components/product/Product";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-
   const [isCartActive, setIsCartActive] = useState(false);
   const [cart, setCart] = useState([]);
-  const [prodNumber, setProdNumber] = useState(0)
+  const [prodNumber, setProdNumber] = useState(0);
 
   const activeCart = () => {
     setIsCartActive(!isCartActive);
-  }
+  };
 
-  //Add to cart functionality: Verify if an item is or 
-  //not in the cart before adding it
+  //Add to cart functionality: Verify if an item is or
+  //not in the cart before adding it. If exist only increase the quantity
+  //If not add it on cart.
   const addTocart = (product, prodNumber) => {
-    const exist = cart.find(el => el.id === product.id);
+    const exist = cart.find((el) => el.id === product.id);
     if (exist) {
       setCart(
-        cart.map(el => (
+        cart.map((el) =>
           el.id === product.id ? { ...exist, qty: exist.qty + 1 } : el
-        ))
+        )
       );
     } else {
-      setCart([...cart, {...product, qty: 1} ]);
+      setCart([...cart, { ...product, qty: 1 }]);
     }
 
-    increaseProdNum(prodNumber)
-  }
+    increaseProdNum(prodNumber);
+  };
+
+  //delete and decrease product from cart if the product exist
+  const removeProduct = (product) => {
+    const exist = cart.find((el) => el.id === product.id);
+    if (exist.qty === 1) {
+      setCart(cart.filter((el) => el.id !== product.id));
+    } else {
+      setCart(
+        cart.map((el) =>
+          el.id === product.id ? { ...exist, qty: exist.qty - 1 } : el
+        )
+      );
+    }
+
+    decreaseProductNum(prodNumber);
+  };
+
 
   const increaseProdNum = (prodNumber) => {
-    setProdNumber(prodNumber => prodNumber + 1);
-  }
+    setProdNumber((prodNumber) => prodNumber + 1);
+  };
 
-  
-
+  const decreaseProductNum = (prodNumber) => {
+    setProdNumber((prodNumber) => prodNumber - 1);
+  };
 
   return (
     <Router>
-      <Nav activeCart={activeCart} isCartActive={isCartActive} addTocart={addTocart} cart={cart} />
+      <Nav
+        activeCart={activeCart}
+        isCartActive={isCartActive}
+        cart={cart}
+        removeProduct={removeProduct}
+      />
       <Route>
-        <Product addTocart={addTocart} prodNumber={prodNumber} />
+        <Product
+          addTocart={addTocart}
+          prodNumber={prodNumber}
+          removeProduct={removeProduct}
+        />
       </Route>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
