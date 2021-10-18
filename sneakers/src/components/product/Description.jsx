@@ -34,12 +34,12 @@ const Description = ({ addTocart, removeProduct, prodNumber }) => {
                 </div>
                 <div className='increase-addto'>
                   <div className='increase-nbr-prosuct'>
-                  <Button />
+                  
                     <button className='fas' onClick={() => {addTocart(product, prodNumber)}}><img src={plus} alt="plus" /></button>
                     <p className='add'>{prodNumber}</p>
                     <button className='fas' disabled={prodNumber <= 0 ? true : disabled} onClick={() => {removeProduct(product, prodNumber)}}><img src={minus} alt="minus" className='fas'/></button>
                   </div>
-                  <Button 
+                  <Button
                     type='button' 
                     className='cart-btn'
                     text='Add To Cart' 

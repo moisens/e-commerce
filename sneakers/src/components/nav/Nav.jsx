@@ -6,7 +6,7 @@ import logo from "../../../public/images/logo.svg";
 import iconcart from "../../../public/images/iconcart.svg";
 import Cart from "../cart/Cart";
 
-const Nav = ({ activeCart, isCartActive, cart, removeProduct }) => {
+const Nav = ({ activeCart, isCartActive, cart, prodNumber, deletePermentally }) => {
   return (
     <nav className="nav-container">
       <div className="logo-links-container">
@@ -29,7 +29,7 @@ const Nav = ({ activeCart, isCartActive, cart, removeProduct }) => {
       <div className="nav-cart-avatar">
         <div className="nav-cart" onClick={activeCart}>
           <img src={iconcart} alt="icon-cart" />
-          <div className="cart-number-art">3</div>
+          <div className="cart-number-art">{prodNumber}</div>
         </div>
         <div className="nav-avatar">
           <img src={avatar} alt="avatar" />
@@ -38,7 +38,7 @@ const Nav = ({ activeCart, isCartActive, cart, removeProduct }) => {
       <Cart
         isCartActive={isCartActive}
         cart={cart}
-        removeProduct={removeProduct}
+        deletePermentally={deletePermentally}
       />
     </nav>
   );

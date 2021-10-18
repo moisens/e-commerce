@@ -126,6 +126,8 @@
           align-items: center;
           cursor: pointer;
           padding: 5px;
+          border: none;
+          background-color: transparent;
         
         }
 
@@ -138,17 +140,22 @@
 
     .cart-btn {
       display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 15px;
       background-color: hsl(26, 100%, 55%);
-      padding: 20px 80px;
+      width: 260px;
+      height: 55px;
       color: hsl(0, 0%, 100%);
       font-weight: 700;
       border-radius: 12px;
       cursor: pointer;
       transition: all ease-in .9s;
+      border: none;
 
       &:hover {
         background-color: hsl(25, 100%, 94%);
+        color: hsl(220, 13%, 13%);
         transition: all ease-out .9s;
       }
       
