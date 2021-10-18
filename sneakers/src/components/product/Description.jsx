@@ -2,18 +2,17 @@ import useFetch from "../../hooks/useFetch"
 import plus from '../../../public/images/plus.svg'
 import minus from '../../../public/images/minus.svg'
 import iconcart from '../../../public/images/iconcart.svg'
-import Imageproduct from './Imageproduct'
 import { useState } from "react"
+import { Button, BtnImg } from '../btnComponent/Button'
 
 
 
-const Description = ({ addTocart, prodNumber }) => {
+const Description = ({ addTocart, removeProduct, prodNumber }) => {
   const { error, datas, status } = useFetch('../../../public/data/data.json');
+  const [disabled, setDisabled] = useState(false);
 
   if (status === 'pending') return <h2>Loading...</h2>
   if (status === 'rejected') throw error;
-
-  
 
   return (
     <>
@@ -22,8 +21,8 @@ const Description = ({ addTocart, prodNumber }) => {
           {datas.map(product => {
             const { id, company, title, price, description } = product;
             return (
-              <>
-                <div key={id}>
+              <div key={id}>
+                <div>
                   <h5>{company}</h5>
                   <h2>{title}</h2>
                   <p className='description-p'>{description}</p>
@@ -35,16 +34,21 @@ const Description = ({ addTocart, prodNumber }) => {
                 </div>
                 <div className='increase-addto'>
                   <div className='increase-nbr-prosuct'>
-                    <div className='fas' onClick={() => {addTocart(product, prodNumber)}}><img src={plus} alt="plus" /></div>
+                  <Button />
+                    <button className='fas' onClick={() => {addTocart(product, prodNumber)}}><img src={plus} alt="plus" /></button>
                     <p className='add'>{prodNumber}</p>
-                    <div className='fas'><img src={minus} alt="minus" className='fas'/></div>
+                    <button className='fas' disabled={prodNumber <= 0 ? true : disabled} onClick={() => {removeProduct(product, prodNumber)}}><img src={minus} alt="minus" className='fas'/></button>
                   </div>
-                  <div className='cart-btn' onClick={() => {addTocart(product)}}>
-                    <img src={iconcart} alt="icon-cart" />
-                    <p>Add to cart</p>
-                  </div>
+                  <Button 
+                    type='button' 
+                    className='cart-btn'
+                    text='Add To Cart' 
+                    onClick={() => {addTocart(product)}} 
+
+                  />
+                  
                 </div>
-              </>
+              </div>
             )
           })}
       </>)}

@@ -1,8 +1,8 @@
 import "./cart.scss";
 import effacer from "../../../public/images/effacer.svg";
-import Button from "../btnComponent/Button";
+import { Button } from "../btnComponent/Button";
 
-const Cart = ({ isCartActive, addTocart, cart }) => {
+const Cart = ({ isCartActive, cart, removeProduct }) => {
   const totalPrice = cart.reduce(
     (prevVal, currentVal) => prevVal + currentVal.qty * currentVal.price,
     0
@@ -36,11 +36,17 @@ const Cart = ({ isCartActive, addTocart, cart }) => {
                   ${prod.price - (prod.price * 50) / 100}
                   <span className="article-of-number"> x {prod.qty}</span>
                   <span className="cart-prices">
-                    {' '}${totalPrice - (totalPrice * 50) / 100}.00
+                    {" "}
+                    ${totalPrice - (totalPrice * 50) / 100}.00
                   </span>
                 </p>
               </div>
-              <div className="cart-delete">
+              <div
+                className="cart-delete"
+                onClick={() => {
+                  removeProduct(prod);
+                }}
+              >
                 <img src={effacer} alt="delete-cart" />
               </div>
             </div>
