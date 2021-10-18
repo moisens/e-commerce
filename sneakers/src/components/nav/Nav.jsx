@@ -8,7 +8,7 @@ import Cart from '../cart/Cart'
 
 
 
-const Nav = ({ activeCart, isCartActive }) => {
+const Nav = ({ activeCart, isCartActive, addTocart, cart }) => {
   return (
     <nav className='nav-container'>
       <div className='logo-links-container'>
@@ -35,7 +35,7 @@ const Nav = ({ activeCart, isCartActive }) => {
           <img src={avatar} alt="avatar" />
         </div>
       </div>
-      <Cart isCartActive={isCartActive} />
+      <Cart isCartActive={isCartActive} addTocart={addTocart} cart={cart} />
     </nav>
   )
 }

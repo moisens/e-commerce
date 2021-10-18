@@ -5,23 +5,12 @@ import iconcart from '../../../public/images/iconcart.svg'
 import Imageproduct from './Imageproduct'
 import Description from './Description'
 
-const Product = () => {
+const Product = ({ addTocart, prodNumber }) => {
   return (
     <header className='product-detail'>
       <Imageproduct />
       <section className='product-description'>
-        <Description />
-        <div className='increase-addto'>
-          <div className='increase-nbr-prosuct'>
-            <div className='fas'><img src={plus} alt="plus" /></div>
-            <p className='add'>3</p>
-            <div className='fas'><img src={minus} alt="minus" className='fas'/></div>
-          </div>
-          <div className='cart-btn'>
-            <img src={iconcart} alt="icon-cart" />
-            <p>Add to cart</p>
-          </div>
-        </div>
+        <Description addTocart={addTocart} prodNumber={prodNumber} />
       </section>
     </header>
   )
