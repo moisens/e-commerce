@@ -47,6 +47,11 @@ function App() {
     decreaseProductNum(prodNumber);
   };
 
+  const deletePermentally = (product) => {
+    setCart(cart.filter((el) => el.id !== product.id));
+    setProdNumber(0);
+  }
+
 
   const increaseProdNum = (prodNumber) => {
     setProdNumber((prodNumber) => prodNumber + 1);
@@ -62,7 +67,9 @@ function App() {
         activeCart={activeCart}
         isCartActive={isCartActive}
         cart={cart}
+        prodNumber={prodNumber}
         removeProduct={removeProduct}
+        deletePermentally={deletePermentally}
       />
       <Route>
         <Product

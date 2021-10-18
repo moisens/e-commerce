@@ -5,7 +5,7 @@ import iconcart from '../../../public/images/iconcart.svg'
 import Imageproduct from './Imageproduct'
 import Description from './Description'
 
-const Product = ({ addTocart, removeProduct, prodNumber }) => {
+const Product = ({ addTocart, removeProduct, prodNumber, cart }) => {
   return (
     <header className='product-detail'>
       <Imageproduct />
@@ -13,7 +13,7 @@ const Product = ({ addTocart, removeProduct, prodNumber }) => {
         <Description 
           addTocart={addTocart}
           removeProduct={removeProduct}
-          prodNumber={prodNumber} 
+          prodNumber={prodNumber}
 
         />
       </section>
