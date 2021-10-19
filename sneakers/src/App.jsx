@@ -50,8 +50,7 @@ function App() {
   const deletePermentally = (product) => {
     setCart(cart.filter((el) => el.id !== product.id));
     setProdNumber(0);
-  }
-
+  };
 
   const increaseProdNum = (prodNumber) => {
     setProdNumber((prodNumber) => prodNumber + 1);

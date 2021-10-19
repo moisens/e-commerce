@@ -6,7 +6,13 @@ import logo from "../../../public/images/logo.svg";
 import iconcart from "../../../public/images/iconcart.svg";
 import Cart from "../cart/Cart";
 
-const Nav = ({ activeCart, isCartActive, cart, prodNumber, deletePermentally }) => {
+const Nav = ({
+  activeCart,
+  isCartActive,
+  cart,
+  prodNumber,
+  deletePermentally,
+}) => {
   return (
     <nav className="nav-container">
       <div className="logo-links-container">
