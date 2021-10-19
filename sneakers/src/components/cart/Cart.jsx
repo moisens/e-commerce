@@ -27,7 +27,11 @@ const Cart = ({ isCartActive, cart, deletePermentally }) => {
         {cart.map((prod) => (
           <div className="added-product" key={prod.id}>
             <div className="cart-image">
-              <img src={prod.image} alt="" />
+              <img
+                src={prod.images[0].image}
+                alt={prod.company}
+                title={prod.company}
+              />
             </div>
             <div className="cart-descript">
               <p>{prod.title}</p>

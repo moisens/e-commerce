@@ -6,26 +6,24 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App({ initialState = 0 }) {
   const [isCartActive, setIsCartActive] = useState(false);
-  const [cart, setCart] = useState(
-    () => localStorage.getItem('Cart')
-    ? JSON.parse(localStorage.getItem('Cart'))
-    : []
-  )
-  
+  const [cart, setCart] = useState(() =>
+    localStorage.getItem("Cart") ? JSON.parse(localStorage.getItem("Cart")) : []
+  );
+
   //Adding cart to local storage
   useEffect(() => {
-    window.localStorage.setItem('Cart', JSON.stringify(cart))
+    window.localStorage.setItem("Cart", JSON.stringify(cart));
   }, [cart]);
 
-  const [prodNumber, setProdNumber] = useState(
-    () => localStorage.getItem('Qty') 
-    ? JSON.parse(localStorage.getItem('Qty'))
-    : initialState
+  const [prodNumber, setProdNumber] = useState(() =>
+    localStorage.getItem("Qty")
+      ? JSON.parse(localStorage.getItem("Qty"))
+      : initialState
   );
 
   //Adding Number of items in cart to localstorage
   useEffect(() => {
-    localStorage.setItem('Qty', JSON.stringify(prodNumber))
+    localStorage.setItem("Qty", JSON.stringify(prodNumber));
   }, [prodNumber]);
 
   const activeCart = () => {
