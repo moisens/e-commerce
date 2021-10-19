@@ -20,16 +20,16 @@ const Nav = ({
           <img src={logo} alt="logo-sneakers" title="sneakers-logo" />
         </div>
         <div className="nav-content">
-          {links.map((link) => {
-            const { id, text, url } = link;
-            return (
-              <ul key={id}>
-                <li>
+          <ul className="nav-content">
+            {links.map((link) => {
+              const { id, text, url } = link;
+              return (
+                <li key={id}>
                   <Link to={url}>{text}</Link>
                 </li>
-              </ul>
-            );
-          })}
+              );
+            })}
+          </ul>
         </div>
       </div>
       <div className="nav-cart-avatar">

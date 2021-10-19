@@ -3,7 +3,7 @@
   position: absolute;
   top: 80px;
   right: 70px;
-  width: 300px;
+  width: 340px;
   height: auto;
   padding: 20px 0 20px;
   border-radius: 12px;
@@ -14,7 +14,6 @@
     display: block;
   }
 
-
   .cart-title {
     font-weight: 400;
     color: hsl(220, 13%, 13%);
@@ -23,7 +22,7 @@
 
   .cart-hr {
     border-top: 1px solid hsl(223, 64%, 98%);
-    margin: 20px 0 ;
+    margin: 20px 0;
   }
 
   section {
@@ -35,7 +34,6 @@
       &.isVisible {
         text-align: center;
         display: block;
-
       }
     }
 
@@ -44,6 +42,7 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 20px;
+      gap: 5px;
 
       .cart-image {
         width: 60px;
@@ -53,8 +52,10 @@
 
         img {
           width: 100%;
+          height: 100%;
           background-size: cover;
           object-fit: cover;
+          border-radius: 6px;
         }
       }
 
@@ -71,7 +72,6 @@
       .cart-delete {
         cursor: pointer;
       }
-
     }
     .checkout-btn {
       background-color: hsl(26, 100%, 55%);
@@ -80,20 +80,15 @@
       padding: 16px 0 16px;
       border: none;
       border-radius: 9px;
-      transition: all ease-in .6s;
+      transition: all ease-in 0.6s;
       font-weight: 700;
       cursor: pointer;
 
       &:hover {
         background-color: hsl(25, 100%, 94%);
-        transition: all ease-out .6s;
+        transition: all ease-out 0.6s;
         color: hsl(220, 13%, 13%);
       }
     }
-
   }
-  
-
-
-
 }
