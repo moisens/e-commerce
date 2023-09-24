@@ -2,7 +2,7 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 
 const Imageproduct = () => {
-  const { error, status, datas } = useFetch("../../../public/data/data.json");
+  const { error, status, datas } = useFetch("/data/data.json");
 
   const [mainImage, setMainImage] = useState("/images/product1.jpg");
 
