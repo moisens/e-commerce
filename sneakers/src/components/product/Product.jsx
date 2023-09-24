@@ -1,7 +1,7 @@
 import "./product.scss";
-import plus from "../../../public/images/plus.svg";
-import minus from "../../../public/images/minus.svg";
-import iconcart from "../../../public/images/iconcart.svg";
+import plus from "/images/plus.svg";
+import minus from "/images/minus.svg";
+import iconcart from "/images/iconcart.svg";
 import Imageproduct from "./Imageproduct";
 import Description from "./Description";
 

@@ -1,12 +1,12 @@
 import useFetch from "../../hooks/useFetch";
-import plus from "../../../public/images/plus.svg";
-import minus from "../../../public/images/minus.svg";
-import iconcart from "../../../public/images/iconcart.svg";
+import plus from "/images/plus.svg";
+import minus from "/images/minus.svg";
+import iconcart from "/images/iconcart.svg";
 import { useState } from "react";
 import { Button, BtnImg } from "../btnComponent/Button";
 
 const Description = ({ addTocart, removeProduct, prodNumber }) => {
-  const { error, datas, status } = useFetch("../../../public/data/data.json");
+  const { error, datas, status } = useFetch("/data/data.json");
   const [disabled, setDisabled] = useState(false);
 
   if (status === "pending") return <h2>Loading...</h2>;
@@ -26,7 +26,7 @@ const Description = ({ addTocart, removeProduct, prodNumber }) => {
                   <p className="description-p">{description}</p>
                   <div className="product-prices">
                     <p className="reduced-price">
-                      ${price - (price * 50) / 100}.00
+                      ${`${price - (price * 50) / 100}`}.00
                     </p>
                     <p className="reduction-percent">50%</p>
                   </div>

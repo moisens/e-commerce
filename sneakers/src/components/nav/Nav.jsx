@@ -1,9 +1,9 @@
 import "./nav.scss";
 import { links } from "../../utils/utils";
 import { Link } from "react-router-dom";
-import avatar from "../../../public/images/avatar.png";
-import logo from "../../../public/images/logo.svg";
-import iconcart from "../../../public/images/iconcart.svg";
+import avatar from "/images/avatar.png";
+import logo from "/images/logo.svg";
+import iconcart from "/images/iconcart.svg";
 import Cart from "../cart/Cart";
 
 const Nav = ({

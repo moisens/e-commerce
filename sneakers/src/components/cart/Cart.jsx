@@ -1,5 +1,5 @@
 import "./cart.scss";
-import effacer from "../../../public/images/effacer.svg";
+import Effacer from "/images/effacer.svg";
 import { Button } from "../btnComponent/Button";
 
 const Cart = ({ isCartActive, cart, deletePermentally }) => {
@@ -50,7 +50,7 @@ const Cart = ({ isCartActive, cart, deletePermentally }) => {
                 deletePermentally(prod);
               }}
             >
-              <img src={effacer} alt="delete-cart" />
+              <img src={Effacer} alt="delete-cart" />
             </div>
           </div>
         ))}
