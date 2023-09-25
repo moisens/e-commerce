@@ -26,7 +26,7 @@ const Description = ({ addTocart, removeProduct, prodNumber }) => {
                   <p className="description-p">{description}</p>
                   <div className="product-prices">
                     <p className="reduced-price">
-                      $ {`${price - (price * 50) / 100}`}.00
+                      ${`${price - (price * 50) / 100}`}.00
                     </p>
                     <p className="reduction-percent">50%</p>
                   </div>
